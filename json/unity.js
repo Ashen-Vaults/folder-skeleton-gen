@@ -1,0 +1,69 @@
+{
+  "Assets": [
+    {
+      "name": "Art",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Animations",
+          "type": "folder"
+        },
+        {
+          "name": "Materials",
+          "type": "folder"
+        },
+        {
+          "name": "Models",
+          "type": "folder"
+        },
+        {
+          "name": "Textures",
+          "type": "folder"
+        }
+      ]
+    },
+    {
+      "name": "Audio",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Music",
+          "type": "folder"
+        },
+        {
+          "name": "SFX",
+          "type": "folder"
+        }
+      ]
+    },
+    {
+      "name": "Code",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Editor",
+          "type": "folder"
+        },
+        {
+          "name": "Shaders",
+          "type": "folder"
+        }
+      ]
+    },    {
+      "name": "Plugins",
+      "type": "folder"
+    },
+    {
+      "name": "Prefabs",
+      "type": "folder"
+    },
+      {
+      "name": "Resources",
+      "type": "folder"
+    },
+    {
+      "name": "Scenes",
+      "type": "folder"
+    }
+  ]
+}
