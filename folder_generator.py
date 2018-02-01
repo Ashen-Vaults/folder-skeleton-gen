@@ -10,8 +10,8 @@ def read_json(path):
 
 def create_folder(directory):
     try:
-        if not os.path.exists('test/'+directory):
-            os.makedirs('test/'+directory)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
     except OSError:
         print('Error: Creating directory. ' + directory)
 
@@ -23,10 +23,9 @@ def generate(json):
     for i in (items):
         if 'children' in i:
             for c in i['children']:
-                create_folder(str(i['name']) + '/'+  str(c['name']))
+                create_folder(str(i['name']) + '/' + str(c['name']))
 
     [create_folder(items[i]['name']) for i, folder in enumerate(items) if items[i]['type'] == 'folder']
-
 
 
 generate('data/unity.json')
