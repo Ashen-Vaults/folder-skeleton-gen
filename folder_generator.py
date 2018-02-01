@@ -1,31 +1,28 @@
+#!/usr/bin/env python
+
 import os
 import pandas as pd
 import settings
 
 
-def read_json(path):
+def get_json(path):
     with open(path) as fd:
-        return pd.read_json(path)
+        return [x for x in pd.read_json(path)[settings.root]]
 
 
 def create_folder(directory):
     try:
         if not os.path.exists(directory):
-            os.makedirs(directory)
+            os.makedirs(''+directory)
     except OSError:
         print('Error: Creating directory. ' + directory)
+    return directory
 
 
 def generate(json):
-    structure = [x for x in read_json(json)[settings.root]]
-    items = [child for folder in structure for child in folder]
-
-    for i in (items):
-        if 'children' in i:
-            for c in i['children']:
-                create_folder(str(i['name']) + '/' + str(c['name']))
-
+    structure = get_json(json)
+    items = [x for folder in structure for x in folder]
     [create_folder(items[i]['name']) for i, folder in enumerate(items) if items[i]['type'] == 'folder']
-
+    [create_folder(str(i['name']) + '/' + str(c['name'])) for i in items if 'children' in i for c in i['children']]
 
 generate('data/unity.json')
