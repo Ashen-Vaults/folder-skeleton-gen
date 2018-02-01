@@ -12,6 +12,7 @@ def get_json(path):
 
 
 def create_folder(path):
+    path = os.getcwd() +'/'+ path
     '''Attempts to create a folder at specified path
     Returns success. TODO: store fails, and allow for
     re-attempt
