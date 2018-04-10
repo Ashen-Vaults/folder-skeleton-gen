@@ -1,14 +1,13 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import os
 import pandas as pd
-import settings
 
 
 def get_json(path):
     '''Returns the json data as data frame'''
     with open(path) as fd:
-        return [x for x in pd.read_json(path)[settings.root]]
+        return [x for x in pd.read_json(path)['root']]
 
 
 def create_folder(path):
